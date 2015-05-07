@@ -1,0 +1,25 @@
+{
+    "name": "setools/symfony-db-translation-bundle",
+    "description": "A simple way to enable DB-based translations",
+    "keywords": ["database","translations", "symfony"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Viktoras Pu",
+            "email": "setools@webaltic.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "~2.3",
+        "doctrine/common": "~2.2"
+    },
+    "autoload": {
+        "psr-0": { "Setools\\Bundle\\DbTranslationBundle": "" }
+    },
+    "target-dir": "Setools/Bundle/DbTranslationBundle",
+    "extra": {
+        
+    },
+    "minimum-stability": "dev"
+}
