@@ -24,6 +24,7 @@ class DbLoader implements LoaderInterface
     {
         $em = $this->doctrine->getManager();
         
+        /* @var $translations \Setools\Bundle\DbTranslationBundle\Entity\Translation[] */
         $translations = $em->getRepository("SetoolsDbTranslationBundle:Translation")->findBy([
             'locale' => $locale,
         ]);

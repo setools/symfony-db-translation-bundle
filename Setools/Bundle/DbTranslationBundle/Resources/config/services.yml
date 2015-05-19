@@ -1,16 +1,14 @@
 parameters:
-    translation.loader.db.class: Setools\Bundle\DbTranslationBundle\Services\DbLoader
-    #translator.class: Setools\Bundle\DbTranslationBundle\Services\Translation\Translator
+    setools.translation.loader.db.class: Setools\Bundle\DbTranslationBundle\Services\DbLoader
+    translator.class: Setools\Bundle\DbTranslationBundle\Services\Translation\Translator
     
 services:
     translation.loader.db:
-        class: %translation.loader.db.class%
+        class: %setools.translation.loader.db.class%
         arguments: [@doctrine]
         tags:
             - { name: translation.loader, alias: db}
 
-    translation.translator:
+    setools.translation.translator:
         class: Setools\Bundle\DbTranslationBundle\Services\Translation\Translator
         parent: translator.default
-        #calls:
-        #arguments: [@service_container, @translator.selector, {}, {cache_dir: %kernel.cache_dir%, debug: %kernel.debug%}]

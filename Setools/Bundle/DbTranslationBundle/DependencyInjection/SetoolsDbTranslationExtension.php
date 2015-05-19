@@ -15,15 +15,28 @@ use Symfony\Component\DependencyInjection\Loader;
 class SetoolsDbTranslationExtension extends Extension
 {
     /**
+     * @var array
+     */
+    private $bundleConfig = [];
+    
+    /**
      * {@inheritDoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+        $this->bundleConfig = $config;
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
 
+    /**
+     * @return array
+     */
+    public function getBundleConfig()
+    {
+        return $this->bundleConfig;
+    }
 }

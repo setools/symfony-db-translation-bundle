@@ -27,7 +27,6 @@ class Configuration implements ConfigurationInterface
                     //->isRequired()
                     ->requiresAtLeastOneElement()
                     ->prototype('scalar')
-                        //->defaultValue('local')
                     ->end()
                 ->end()
             ->end();
